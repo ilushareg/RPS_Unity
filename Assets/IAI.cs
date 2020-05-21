@@ -24,7 +24,7 @@ class AICheater : IAI
 {
     public Gestures MakeDecision(Gestures g)
     {
-        //TODO: add some probability
+        //TODO: make not so clever
         return RPSRules.GetWinGesture(g);
     }
 }

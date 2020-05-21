@@ -14,6 +14,7 @@ public class MatchResult : MonoBehaviour
     Text figure1 = null;
     Text figure2 = null;
     Text result = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,18 +82,13 @@ public class MatchResult : MonoBehaviour
         ai = _ai;
     }
 
-    internal void hide()
-    {
-        gameObject.SetActive(false);
-    }
-    
     // Update is called once per frame
     void Update()
     {
         
     }
 
-    public void Next()
+    internal void Next()
     {
         gameObject.SetActive(false);
         sf.StartSelecting();

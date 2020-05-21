@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
         UpdateScore();
     }
 
-    void UpdateScore()
+    private void UpdateScore()
     {
         score.text = p1 + ":" + p2;
     }
@@ -27,12 +27,12 @@ public class Score : MonoBehaviour
         
     }
 
-    public void addP1()
+    internal void addP1()
     {
         p1 += 1;
         UpdateScore();
     }
-    public void addP2()
+    internal void addP2()
     {
         p2 += 1;
         UpdateScore();

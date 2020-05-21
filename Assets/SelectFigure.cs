@@ -19,15 +19,15 @@ public class SelectFigure : MonoBehaviour
         
     }
 
-    public void Rock()
+    internal void Rock()
     {
         DoInput(RPS.Gestures.R);
     }
-    public void Paper()
+    internal void Paper()
     {
         DoInput(RPS.Gestures.P);
     }
-    public void Scissors()
+    internal void Scissors()
     {
         DoInput(RPS.Gestures.S);
     }
