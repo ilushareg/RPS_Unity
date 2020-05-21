@@ -6,11 +6,18 @@ using UnityEngine;
 public class SelectFigure : MonoBehaviour
 {
     // Start is called before the first frame update
-    MatchResult mr = null;
+
+    Action<RPS.Gestures> onInput;
 
     void Start()
     {
-        
+        SetInputConsumer(g => gameObject.SetActive(false));
+
+    }
+
+    internal void SetInputConsumer(Action<RPS.Gestures> p)
+    {
+        onInput += p;
     }
 
     // Update is called once per frame
@@ -34,14 +41,8 @@ public class SelectFigure : MonoBehaviour
 
     private void DoInput(RPS.Gestures g)
     {
-        mr.UserInput(g);
-        gameObject.SetActive(false);
-    }
-
-    internal void SetMatchResult(MatchResult _mr)
-    {
-        mr = _mr;
-    }
+        onInput(g);
+    }   
 
     internal void GO()
     {

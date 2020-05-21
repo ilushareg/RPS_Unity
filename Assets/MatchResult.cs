@@ -9,23 +9,25 @@ public class MatchResult : MonoBehaviour
 {
     private Score score = null;
     private IAI ai = null;
-    private SelectFigure sf = null;
 
     Text figure1 = null;
     Text figure2 = null;
     Text result = null;
 
+    Action next;
+
     // Start is called before the first frame update
+
     void Start()
     {
         figure1 = transform.Find("Selection1").GetComponent<Text>();
         figure2 = transform.Find("Selection2").GetComponent<Text>();
         result = transform.Find("Result").GetComponent<Text>();
-    }
 
-    internal void SetSelectFigure(SelectFigure _sf)
-    {
-        sf = _sf;
+        SetNext(()=>
+        {
+            gameObject.SetActive(false);
+        });
     }
 
     private string GestureToString(Gestures g)
@@ -88,10 +90,15 @@ public class MatchResult : MonoBehaviour
         
     }
 
+    internal void SetNext(Action t)
+    {
+        next += t;
+        
+    }
+
     internal void Next()
     {
-        gameObject.SetActive(false);
-        sf.StartSelecting();
+        next();
     }
 
 }
