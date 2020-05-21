@@ -9,6 +9,7 @@ public class MatchResult : MonoBehaviour
 {
     private Score score = null;
     private IAI ai = null;
+    private SelectFigure sf = null;
 
     Text figure1 = null;
     Text figure2 = null;
@@ -19,6 +20,11 @@ public class MatchResult : MonoBehaviour
         figure1 = transform.Find("Selection1").GetComponent<Text>();
         figure2 = transform.Find("Selection2").GetComponent<Text>();
         result = transform.Find("Result").GetComponent<Text>();
+    }
+
+    internal void SetSelectFigure(SelectFigure _sf)
+    {
+        sf = _sf;
     }
 
     private string GestureToString(Gestures g)
@@ -63,7 +69,6 @@ public class MatchResult : MonoBehaviour
         }
 
         gameObject.SetActive(true);
-
     }
 
     internal void SetScore(Score _score)
@@ -80,7 +85,7 @@ public class MatchResult : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -89,6 +94,8 @@ public class MatchResult : MonoBehaviour
 
     public void Next()
     {
+        gameObject.SetActive(false);
+        sf.StartSelecting();
     }
 
 }

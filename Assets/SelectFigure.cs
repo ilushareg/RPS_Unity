@@ -21,15 +21,21 @@ public class SelectFigure : MonoBehaviour
 
     public void Rock()
     {
-        mr.UserInput(RPS.Gestures.R);
+        DoInput(RPS.Gestures.R);
     }
     public void Paper()
     {
-        mr.UserInput(RPS.Gestures.P);
+        DoInput(RPS.Gestures.P);
     }
     public void Scissors()
     {
-        mr.UserInput(RPS.Gestures.S);
+        DoInput(RPS.Gestures.S);
+    }
+
+    private void DoInput(RPS.Gestures g)
+    {
+        mr.UserInput(g);
+        gameObject.SetActive(false);
     }
 
     internal void SetMatchResult(MatchResult _mr)
@@ -39,8 +45,12 @@ public class SelectFigure : MonoBehaviour
 
     internal void GO()
     {
-        mr.hide();
         transform.gameObject.SetActive(true);
 
+    }
+
+    internal void StartSelecting()
+    {
+        gameObject.SetActive(true);
     }
 }
