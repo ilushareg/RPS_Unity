@@ -18,6 +18,13 @@ Mac Specific
 
 # Mono auto generated files
 mono_crash.*
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
 
 # Build results
 [Dd]ebug/
