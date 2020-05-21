@@ -2,19 +2,19 @@
 
 interface IAI
 {
-    Gestures MakeDecision(Gestures g);
+    Gestures MakeDecision(Gestures gOpponent);
 }
 
 class AISimple : IAI
 {
-    public Gestures MakeDecision(Gestures g)
+    public Gestures MakeDecision(Gestures gOpponent)
     {
         return RPSRules.GetRandomGesture();
     }
 }
 class AIDork : IAI
 {
-    public Gestures MakeDecision(Gestures g)
+    public Gestures MakeDecision(Gestures gOpponent)
     {
         return Gestures.R;
     }
@@ -22,9 +22,9 @@ class AIDork : IAI
 
 class AICheater : IAI
 {
-    public Gestures MakeDecision(Gestures g)
+    public Gestures MakeDecision(Gestures gOpponent)
     {
         //TODO: make not so clever
-        return RPSRules.GetWinGesture(g);
+        return RPSRules.GetWinGesture(gOpponent);
     }
 }
