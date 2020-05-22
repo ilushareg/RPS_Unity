@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameplayFlow.cs" />
     <Compile Include="Assets\IAI.cs" />
     <Compile Include="Assets\Init.cs" />
     <Compile Include="Assets\MatchResult.cs" />
